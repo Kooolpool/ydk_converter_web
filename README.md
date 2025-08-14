@@ -105,6 +105,7 @@ This project is licensed under the MIT License - see the LICENSE file for detail
 
 - [YGOProDeck](https://db.ygoprodeck.com/api-guide/) for their comprehensive card database and API
 - The Yu-Gi-Oh! community for inspiration and support
+- [HannesHaglund](https://github.com/HannesHaglund) for inspiration
 
 ## Contact
 
