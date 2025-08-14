@@ -1,0 +1,35 @@
+2025-08-14 13:48:23,158 - __main__ - INFO - Starting application...
+2025-08-14 13:49:00,382 - __main__ - INFO - Starting application...
+2025-08-14 13:49:12,538 - __main__ - ERROR - Internal server error: 500 Internal Server Error: The server encountered an internal error and was unable to complete your request. Either the server is overloaded or there is an error in the application.
+2025-08-14 13:49:19,129 - __main__ - INFO - Added new card to cache: 89943724 -> Elemental HERO Neos
+2025-08-14 13:49:19,266 - __main__ - INFO - Added new card to cache: 40044919 -> Elemental HERO Stratos
+2025-08-14 13:49:19,267 - __main__ - INFO - Successfully converted deck file: Imported Deck_ 8_12_2025, 8_08_40 PM.ydk
+2025-08-14 13:49:19,274 - __main__ - INFO - Cleaned up temporary file: C:\Users\viggo\AppData\Local\Temp\deck_20250814_134919.txt
+2025-08-14 13:49:45,621 - __main__ - ERROR - Error downloading file C:\Users\viggo\AppData\Local\Temp\deck_20250814_134919.txt: [WinError 2] The system cannot find the file specified: 'C:\\Users\\viggo\\AppData\\Local\\Temp\\deck_20250814_134919.txt'
+2025-08-14 13:53:43,448 - __main__ - INFO - Starting application...
+2025-08-14 13:53:55,821 - __main__ - INFO - Added new card to cache: 89943724 -> Elemental HERO Neos
+2025-08-14 13:53:56,016 - __main__ - INFO - Added new card to cache: 40044919 -> Elemental HERO Stratos
+2025-08-14 13:53:56,018 - __main__ - INFO - Successfully converted deck file: Imported Deck_ 8_12_2025, 8_08_40 PM.ydk
+2025-08-14 13:53:56,022 - __main__ - INFO - Cleaned up temporary file: C:\Users\viggo\AppData\Local\Temp\deck_20250814_135356.txt
+2025-08-14 13:54:09,084 - __main__ - ERROR - Error downloading file C:\Users\viggo\AppData\Local\Temp\deck_20250814_135356.txt: [WinError 2] The system cannot find the file specified: 'C:\\Users\\viggo\\AppData\\Local\\Temp\\deck_20250814_135356.txt'
+2025-08-14 13:55:03,626 - __main__ - INFO - Starting application...
+2025-08-14 13:55:07,661 - __main__ - ERROR - Internal server error: 500 Internal Server Error: The server encountered an internal error and was unable to complete your request. Either the server is overloaded or there is an error in the application.
+2025-08-14 13:55:19,462 - __main__ - INFO - Added new card to cache: 89943724 -> Elemental HERO Neos
+2025-08-14 13:55:19,620 - __main__ - INFO - Added new card to cache: 40044919 -> Elemental HERO Stratos
+2025-08-14 13:55:19,621 - __main__ - INFO - Successfully converted deck file: Imported Deck_ 8_12_2025, 8_08_40 PM.ydk
+2025-08-14 13:55:19,623 - __main__ - INFO - Cleaned up temporary file: C:\Users\viggo\AppData\Local\Temp\deck_20250814_135519.txt
+2025-08-14 13:55:21,925 - __main__ - ERROR - File not found: C:\Users\viggo\AppData\Local\Temp\deck_20250814_135519.txt
+2025-08-14 14:01:46,504 - __main__ - INFO - Starting application...
+2025-08-14 14:01:55,358 - __main__ - INFO - Added new card to cache: 89943724 -> Elemental HERO Neos
+2025-08-14 14:01:55,431 - __main__ - INFO - Added new card to cache: 40044919 -> Elemental HERO Stratos
+2025-08-14 14:01:55,432 - __main__ - INFO - Successfully converted deck file: Imported Deck_ 8_12_2025, 8_08_40 PM.ydk
+2025-08-14 14:01:55,435 - __main__ - ERROR - Error processing file Imported Deck_ 8_12_2025, 8_08_40 PM.ydk: Could not build url for endpoint 'download' with values ['filepath']. Did you forget to specify values ['filename']?
+2025-08-14 14:02:09,538 - __main__ - INFO - Successfully converted deck file: Imported Deck_ 8_12_2025, 8_08_40 PM.ydk
+2025-08-14 14:02:09,538 - __main__ - ERROR - Error processing file Imported Deck_ 8_12_2025, 8_08_40 PM.ydk: Could not build url for endpoint 'download' with values ['filepath']. Did you forget to specify values ['filename']?
+2025-08-14 14:02:13,566 - __main__ - INFO - Successfully converted deck file: Imported Deck_ 8_12_2025, 8_08_40 PM.ydk
+2025-08-14 14:02:13,566 - __main__ - ERROR - Error processing file Imported Deck_ 8_12_2025, 8_08_40 PM.ydk: Could not build url for endpoint 'download' with values ['filepath']. Did you forget to specify values ['filename']?
+2025-08-14 14:06:20,243 - __main__ - INFO - Starting application...
+2025-08-14 14:06:28,916 - __main__ - INFO - Added new card to cache: 89943724 -> Elemental HERO Neos
+2025-08-14 14:06:28,981 - __main__ - INFO - Added new card to cache: 40044919 -> Elemental HERO Stratos
+2025-08-14 14:06:28,982 - __main__ - INFO - Successfully converted deck file: Imported Deck_ 8_12_2025, 8_08_40 PM.ydk
+2025-08-14 14:06:28,984 - __main__ - ERROR - Error processing file Imported Deck_ 8_12_2025, 8_08_40 PM.ydk: Could not build url for endpoint 'download' with values ['filepath']. Did you forget to specify values ['filename']?
