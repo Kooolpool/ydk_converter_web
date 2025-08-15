@@ -19,7 +19,7 @@ A web application that converts Yu-Gi-Oh! deck files (.ydk) into a human-readabl
 - Bootstrap 5 (Frontend)
 - YGOProDeck API (Card Resolution)
 
-## Installation
+## Installation (for local use)
 
 1. Clone the repository:
 ```bash
@@ -54,7 +54,7 @@ The application will be available at `http://localhost:5000`
 
 ## Usage
 
-1. Open your web browser and navigate to `http://localhost:5000`
+1. Open your web browser and navigate to `http://localhost:5000` after installing or go to `https://ydk-converter-web.onrender.com/`
 2. Drag and drop your .ydk file onto the upload area (or click to select)
 3. The application will convert your deck file and display the results
 4. Click the "Download as TXT" button to save the converted deck list
