@@ -1,7 +1,8 @@
+from collections import Counter
 from flask import Flask, request, render_template, send_file, after_this_request
 import json
 import os
-import tempfile
+
 import requests
 import logging
 from datetime import datetime
@@ -28,7 +29,7 @@ os.makedirs(app.config['UPLOAD_FOLDER'], exist_ok=True)
 
 # Load card database once
 try:
-    with open('cardinfo.json', 'r', encoding='utf-8-sig') as f:
+    with open('cardinfo.json', 'r', encoding='utf-8') as f:
         card_data = json.load(f)
     
     # Create ID → name mapping
@@ -43,7 +44,7 @@ def card_info_json(card_id: str):
     try:
         response = requests.get(
             f"https://db.ygoprodeck.com/api/v7/cardinfo.php?id={card_id}",
-            timeout=5  # Add timeout to prevent hanging
+            timeout=10 # Set a timeout for the request
         )
         response.raise_for_status()
         return response.json()
@@ -53,7 +54,7 @@ def card_info_json(card_id: str):
 
 def allowed_file(filename):
     """Check if the uploaded file has a .ydk extension."""
-    return '.' in filename and filename.rsplit('.', 1)[1].lower() == 'ydk'
+    return filename and filename.lower().endswith('.ydk')
 
 def convert_ydk_to_text(file_stream):
     """Convert a YDK file to human-readable text format."""
@@ -74,38 +75,27 @@ def convert_ydk_to_text(file_stream):
             elif line == "!side":
                 current_section = "side"
             elif line.isdigit() and current_section:
-                deck_sections[current_section].append(line)
+                name = id_to_name.get(line)
+            # If name is not found, try fetching from API
+                if name is None:
+                    try:
+                        api_data = card_info_json(line)
+                        name = api_data["data"][0]["name"]
+                        id_to_name[line] = name  # Cache for future lookups
+                    except Exception as e:
+                        name = f"Unknown Card ({line})"
+                deck_sections[current_section].append(name)
 
         # Second pass: count cards and build output
         output = []
-        for section_name in ["main", "extra", "side"]:
-            section_cards = {}  # Card name to count mapping
+        for section_name in ["Main", "Extra", "Side"]:
             
-            # Process all cards in this section
-            for card_id in deck_sections[section_name]:
-                # Get card name from cache or API
-                name = id_to_name.get(card_id)
-                if name is None:
-                    try:
-                        api_data = card_info_json(card_id)
-                        name = api_data["data"][0]["name"]
-                        id_to_name[card_id] = name  # Cache for future lookups
-                        logger.info(f"Added new card to cache: {card_id} -> {name}")
-                    except Exception as e:
-                        logger.warning(f"Failed to get card name for ID {card_id}: {str(e)}")
-                        name = f"Unknown Card ({card_id})"
-                
-                # Count this card
-                section_cards[name] = section_cards.get(name, 0) + 1
-            
-            # Add section header
-            section_title = f"{section_name.title()} Deck:"
-            output.append(section_title)
-            
-            # Add cards in alphabetical order with counts
-            for card_name in sorted(section_cards.keys()):
-                count = section_cards[card_name]
-                output.append(f"  {card_name}" + (f" x{count}" if count > 1 else ""))
+            output.append(f"\n{section_name} Deck:")
+            section_cards = deck_sections[section_name.lower()]
+            card_counts = Counter(section_cards)
+            for card_name in sorted(card_counts.keys()):
+                count = card_counts[card_name]
+                output.append(f"  {card_name} x{count}")
             
             # Add spacing between sections
             output.append("")
